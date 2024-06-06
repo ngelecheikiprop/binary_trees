@@ -1,7 +1,9 @@
 #ifndef MAIN_H
 #define MAIN_H
 
-/*standard libraries*/
+/*
+ * standard libraries
+ */
 
 #include <stdio.h>
 #include <stdlib.h>
@@ -32,7 +34,11 @@ typedef struct binary_tree_s avl_t;
 typedef struct binary_tree_s heap_t;
 
 
-/*function prototypes*/
+/*
+ *
+ * function prototypes
+ *
+ * */
 binary_tree_t *binary_tree_node(binary_tree_t *parent, int value);
 binary_tree_t *binary_tree_insert_left(binary_tree_t *parent, int value);
 binary_tree_t *binary_tree_insert_right(binary_tree_t *parent, int value);
@@ -47,7 +53,9 @@ size_t binary_tree_depth(const binary_tree_t *tree);
 size_t binary_tree_size(const binary_tree_t *tree);
 size_t binary_tree_leaves(const binary_tree_t *tree);
 size_t binary_tree_nodes(const binary_tree_t *tree);
-
+int binary_tree_balance(const binary_tree_t *tree);
 void binary_tree_print(const binary_tree_t *);
+int binary_tree_is_full(const binary_tree_t *tree);
+int binary_tree_balance(const binary_tree_t *tree);
 
 #endif
