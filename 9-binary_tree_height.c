@@ -1,5 +1,5 @@
 #include "binary_trees.h"
-
+size_t max(size_t a, size_t b);
 /**
  * binary_tree_height - measures the height of a tree
  *
@@ -9,15 +9,20 @@
  */
 size_t binary_tree_height(const binary_tree_t *tree)
 {
-	size_t lheight = 0;
-	size_t rheight = 0;
+	size_t left = 0;
+	size_t right = 0;
 
-	if (tree == NULL)
-		return (-1);
-	lheight = binary_tree_height(tree->left);
-	rheight = binary_tree_height(tree->right);
-
-	if (lheight > rheight)
-		return (lheight + 1);
-	return (rheight + 1);
+	if (tree)
+	{
+		if (tree->left)
+		{
+			left = 1 + binary_tree_height(tree->left);
+		}
+		if (tree->right)
+		{
+			right = 1 + binary_tree_height(tree->right);
+		}
+		return ((left > right) ? left : right);
+	}
+	return (0);
 }
